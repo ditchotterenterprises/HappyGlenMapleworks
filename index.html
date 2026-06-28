@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Glen Mapleworks | Vermont Barrel-Aged Maple Syrups</title>
+<meta name="description" content="Happy Glen Mapleworks produces barrel-aged and infused Vermont maple syrups, bulk wholesale supply for brewers and producers, and stewards 440 acres of Vermont forest." />
+<meta property="og:title" content="Happy Glen Mapleworks" />
+<meta property="og:description" content="Barrel-aged Vermont maple syrups. Wholesale sourcing for brewers and producers. 440 acres of working forest." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:       #1a1814;
+    --paper:     #f7f4ef;
+    --amber:     #b8650a;
+    --amber-lt:  #e8a44a;
+    --slate:     #4a4740;
+    --forest:    #1e3d2f;
+    --forest-lt: #2e6b4f;
+    --forest-mist: #eef3f0;
+    --rule:      rgba(26,24,20,0.12);
+    --ff-disp:   'Cormorant Garamond', Georgia, serif;
+    --ff-body:   'DM Sans', system-ui, sans-serif;
+    --ff-mono:   'DM Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--ff-body);
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 2.5rem;
+  }
+  .nav-logo {
+    font-family: var(--ff-disp);
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--forest-lt); }
+  nav ul { list-style: none; display: flex; gap: 2rem; }
+  nav ul li a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--slate);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  nav ul li a:hover { color: var(--amber); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 88vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 6rem 2.5rem 4rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    gap: 4rem;
+  }
+  .hero-text {}
+  .hero-eyebrow {
+    font-family: var(--ff-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1.25rem;
+  }
+  .hero-headline {
+    font-family: var(--ff-disp);
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 1.75rem;
+  }
+  .hero-headline em {
+    font-style: italic;
+    color: var(--amber);
+  }
+  .hero-sub {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--slate);
+    line-height: 1.75;
+    max-width: 42ch;
+    margin-bottom: 2.5rem;
+  }
+  .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--paper);
+    border: 1.5px solid var(--ink);
+  }
+  .btn-primary:hover { background: var(--amber); border-color: var(--amber); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1.5px solid var(--rule);
+  }
+  .btn-ghost:hover { border-color: var(--ink); }
+
+  /* hero visual — amber gradient panel with syrup-pour SVG suggestion */
+  .hero-visual {
+    position: relative;
+    height: 520px;
+    background: linear-gradient(145deg, #2c1a06 0%, #6b3a0f 45%, #b8650a 100%);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex; align-items: flex-end; padding: 2.5rem;
+  }
+  .hero-visual::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 30%, rgba(232,164,74,0.25) 0%, transparent 60%);
+  }
+  .hero-visual-label {
+    position: relative; z-index: 1;
+    font-family: var(--ff-disp);
+    font-size: 4rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(247,244,239,0.15);
+    line-height: 1;
+    user-select: none;
+  }
+  .hero-badge {
+    position: absolute; top: 2rem; right: 2rem; z-index: 2;
+    border: 1px solid rgba(247,244,239,0.3);
+    border-radius: 2px;
+    padding: 0.6rem 1rem;
+    font-family: var(--ff-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(247,244,239,0.6);
+  }
+
+  /* ── SECTION WRAPPERS ── */
+  section { padding: 6rem 2.5rem; }
+  .container { max-width: 1280px; margin: 0 auto; }
+  .section-label {
+    font-family: var(--ff-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .section-headline {
+    font-family: var(--ff-disp);
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+  .section-headline em { font-style: italic; color: var(--amber); }
+  hr.rule { border: none; border-top: 1px solid var(--rule); margin: 0 0 4rem; }
+
+  /* ── MANIFESTO / ABOUT STRIP ── */
+  .about { background: var(--ink); color: var(--paper); }
+  .about .container {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .about .section-headline { color: var(--paper); }
+  .about .section-label { color: var(--amber-lt); }
+  .about-body {
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.85;
+    color: rgba(247,244,239,0.75);
+  }
+  .about-body p + p { margin-top: 1.25rem; }
+  .about-body strong { color: var(--paper); font-weight: 500; }
+  .about-pull {
+    font-family: var(--ff-disp);
+    font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.3;
+    color: var(--paper);
+    border-left: 2px solid var(--forest-lt);
+    padding-left: 1.75rem;
+  }
+
+  /* ── PRODUCTS ── */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--rule);
+    border: 1.5px solid var(--rule);
+    margin-top: 3.5rem;
+  }
+  .product-card {
+    background: var(--paper);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .product-card:hover { background: #f0ece4; }
+  .product-tag {
+    font-family: var(--ff-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--amber);
+  }
+  .product-name {
+    font-family: var(--ff-disp);
+    font-size: 1.75rem;
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--ink);
+  }
+  .product-desc {
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--slate);
+    flex: 1;
+  }
+  .product-detail {
+    font-family: var(--ff-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    color: var(--amber);
+    border-top: 1px solid var(--rule);
+    padding-top: 1rem;
+    margin-top: auto;
+  }
+
+  /* ── WHOLESALE / B2B ── */
+  .wholesale { background: #f0ece4; }
+  .wholesale .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .wholesale-features { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.25rem; }
+  .wholesale-feature {
+    display: flex; gap: 1.25rem; align-items: flex-start;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .wholesale-feature:last-child { border-bottom: none; }
+  .feature-num {
+    font-family: var(--ff-mono);
+    font-size: 0.68rem;
+    color: var(--amber);
+    letter-spacing: 0.1em;
+    padding-top: 0.15rem;
+    flex-shrink: 0;
+  }
+  .feature-text strong { display: block; font-size: 0.9rem; font-weight: 500; margin-bottom: 0.25rem; }
+  .feature-text span { font-size: 0.88rem; font-weight: 300; color: var(--slate); }
+
+  /* ── CARBON ── */
+  .carbon-bar {
+    background: var(--forest);
+    color: var(--paper);
+    padding: 3.5rem 2.5rem;
+    text-align: center;
+  }
+  .carbon-bar .container { max-width: 760px; }
+  .carbon-headline {
+    font-family: var(--ff-disp);
+    font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+    font-weight: 300;
+    color: var(--paper);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .carbon-headline em { font-style: italic; color: #a8d5b5; }
+  .carbon-body {
+    font-size: 0.92rem;
+    font-weight: 300;
+    color: rgba(247,244,239,0.65);
+    line-height: 1.8;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 3rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .footer-logo {
+    font-family: var(--ff-disp);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .footer-logo span { color: var(--amber); }
+  .footer-note {
+    font-size: 0.78rem;
+    font-weight: 300;
+    color: var(--slate);
+    text-align: right;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding-top: 3rem; }
+    .hero-visual { height: 320px; }
+    .about .container { grid-template-columns: 1fr; gap: 3rem; }
+    .products-grid { grid-template-columns: 1fr; }
+    .wholesale .container { grid-template-columns: 1fr; gap: 3rem; }
+    footer { flex-direction: column; align-items: flex-start; }
+    .footer-note { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Happy <span>Glen</span> Mapleworks</a>
+  <ul>
+    <li><a href="#about">Our Story</a></li>
+    <li><a href="#products">Syrups</a></li>
+    <li><a href="#wholesale">Wholesale</a></li>
+    <li><a href="#people">The Team</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow">Vermont · Est. 2024</p>
+    <h1 class="hero-headline">Maple, <em>aged<br>into something</em><br>remarkable.</h1>
+    <p class="hero-sub">
+      Two engineers. 440 Vermont acres. One very good dog. We barrel-age and infuse small-batch maple syrups,
+      supply wholesale to brewers and producers, and steward the forest for the long haul.
+    </p>
+    <div class="btn-group">
+      <a href="#products" class="btn btn-primary">Explore Syrups</a>
+      <a href="#wholesale" class="btn btn-ghost">Wholesale Inquiry</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-badge">Hartford · Norwich, VT</div>
+    <div class="hero-visual-label">Mapleworks</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div>
+      <span class="section-label">Our Story</span>
+      <h2 class="section-headline">Engineers.<br><em>Explorers.</em><br>Sugarmakers.</h2>
+    </div>
+    <div>
+      <blockquote class="about-pull">
+        "Ten years ago, we fell in love with Vermont on a beer-cation with friends. Now we own a maple farm. Turns out beer-cations are very effective."
+      </blockquote>
+      <div class="about-body" style="margin-top:2rem;">
+        <p>
+          Happy Glen Mapleworks is where our skills meet our passions — and where our passions finally won.
+          We spent over two decades in pharmaceutical manufacturing and global strategy, tackling complex problems
+          across the globe as expats. We love the mental challenge of that work. But we also love the outdoors,
+          great food, and the particular kind of quiet you only find in Vermont hardwood.
+        </p>
+        <p>
+          So we bought land — <strong>440 acres across two Vermont properties</strong>, a 330-acre working
+          forest in Braintree and 110 acres on the Hartford–Norwich line — named the operation after our dog,
+          and got to work. Happy Glen is built around barrel-aged and infused maple products that integrate
+          with Vermont's food and beverage culture, wholesale supply relationships built on honesty and
+          traceability, and <strong>genuine, long-term stewardship</strong> of this forest.
+        </p>
+        <p>
+          We're learning as we go and not pretending otherwise. Follow along.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOCUS AREAS -->
+<section style="padding: 5rem 2.5rem; background: #f0ece4;">
+  <div class="container">
+    <span class="section-label">What We Do</span>
+    <h2 class="section-headline">What we <em>actually do.</em></h2>
+    <hr class="rule" />
+    <div style="display:grid; grid-template-columns: repeat(3,1fr); gap: 1.5px; background: var(--rule); border: 1.5px solid var(--rule); margin-top:0;">
+      <div style="background:#f0ece4; padding:2.5rem 2rem;">
+        <span class="product-tag">Barrel-Aged &amp; Infusions</span>
+        <h3 style="font-family:var(--ff-disp); font-size:1.5rem; font-weight:400; margin:0.75rem 0 1rem; line-height:1.15;">Maple that earns its place as an ingredient.</h3>
+        <p style="font-size:0.9rem; font-weight:300; color:var(--slate); line-height:1.7;">
+          We barrel-age Vermont maple in bourbon casks, wine barrels, and beyond — and develop infused
+          expressions that bring new character to the format. These are syrups built for the table,
+          the brew kettle, and the cocktail program. Not condiments.
+        </p>
+      </div>
+      <div style="background:#f0ece4; padding:2.5rem 2rem;">
+        <span class="product-tag">Wholesale Sourcing</span>
+        <h3 style="font-family:var(--ff-disp); font-size:1.5rem; font-weight:400; margin:0.75rem 0 1rem; line-height:1.15;">Grade A bulk supply for brewers and producers.</h3>
+        <p style="font-size:0.9rem; font-weight:300; color:var(--slate); line-height:1.7;">
+          We supply Grade A Amber and Dark bulk maple to craft breweries, food producers, and specialty buyers
+          who care about provenance. Full traceability, honest availability, and a direct relationship
+          with the people who actually own the land.
+        </p>
+      </div>
+      <div style="background:var(--forest-mist); padding:2.5rem 2rem; border-top: 3px solid var(--forest-lt);">
+        <span class="product-tag" style="color:var(--forest);">Land Stewardship</span>
+        <h3 style="font-family:var(--ff-disp); font-size:1.5rem; font-weight:400; margin:0.75rem 0 1rem; line-height:1.15; color:var(--forest);">440 acres managed for the long haul.</h3>
+        <p style="font-size:0.9rem; font-weight:300; color:var(--slate); line-height:1.7;">
+          Across 330 acres in Braintree and 110 acres in Hartford–Norwich, we're enrolled in Vermont's
+          Current Use program and actively pursuing carbon credit opportunities — reinvesting in the forest
+          so it keeps producing, sequestering, and thriving well beyond us.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="container">
+    <span class="section-label">The Syrups</span>
+    <h2 class="section-headline">Every bottle has<br>a <em>story behind it.</em></h2>
+    <hr class="rule" />
+    <div class="products-grid">
+
+      <div class="product-card">
+        <span class="product-tag">Barrel-Aged Series</span>
+        <h3 class="product-name">Bourbon Cask Reserve</h3>
+        <p class="product-desc">
+          Vermont Grade A Dark Color, Robust Taste — already the boldest expression off the evaporator —
+          rested in once-used Kentucky bourbon barrels. The result is complex: vanilla, toasted oak,
+          and a long caramel finish that makes this as at home in a cocktail as on a stack of pancakes.
+          A winter syrup for people who mean it.
+        </p>
+        <div class="product-detail">Aging: 90 days · Barrel: Kentucky Straight Bourbon · Format: 375ml / 750ml</div>
+      </div>
+
+      <div class="product-card">
+        <span class="product-tag">Barrel-Aged Series</span>
+        <h3 class="product-name">Wine Barrel Amber</h3>
+        <p class="product-desc">
+          Amber syrup — bright and clean — finished in red wine barrels sourced from Vermont and Northeast
+          producers. Where bourbon brings weight, wine brings lift: dried fruit, a whisper of tannin,
+          and an acidity that makes this the natural pairing for cheese boards, vinaigrettes, and anywhere
+          you'd want something a little more alive.
+        </p>
+        <div class="product-detail">Aging: 60 days · Barrel: Northeast Red Wine · Format: 375ml / 750ml</div>
+      </div>
+
+      <div class="product-card">
+        <span class="product-tag">Estate Series</span>
+        <h3 class="product-name">Dark & Robust, Unaged</h3>
+        <p class="product-desc">
+          The baseline expression from our sugarbush — and one we're proud to put our name on without
+          adornment. Late-season draw, high mineral content from the Hartford hillside, intensely maple.
+          This is the bottle we keep in the kitchen ourselves. No embellishment, no apology.
+        </p>
+        <div class="product-detail">Grade: Dark Color / Robust Taste · Format: 375ml / 750ml / Bulk</div>
+      </div>
+
+      <div class="product-card">
+        <span class="product-tag">Bulk / Wholesale</span>
+        <h3 class="product-name">Bulk Amber &amp; Dark</h3>
+        <p class="product-desc">
+          For brewers, bakers, and buyers who need volume without compromise on quality. We supply
+          Grade A Amber and Dark in bulk formats with full traceability — forest of origin, season,
+          and Brix documentation available. Consistent year-over-year supply is our goal; honest conversation
+          about what we actually have is our policy.
+        </p>
+        <div class="product-detail">Formats: 1 gal / 5 gal / 40 lb · Minimum order: by arrangement</div>
+      </div>
+
+      <div class="product-card">
+        <span class="product-tag">Brewery Collaboration</span>
+        <h3 class="product-name">Brewer's Grade Adjunct</h3>
+        <p class="product-desc">
+          Maple adjunct supply built for craft brewing. We work with brewers directly to match
+          grade, viscosity, and character to the beer — whether that's a maple stout needing late-kettle
+          depth or a session lager looking for a subtle regional note. Let's talk about your recipe.
+        </p>
+        <div class="product-detail">Grades available: Amber / Dark · Custom Brix on request</div>
+      </div>
+
+      <div class="product-card" style="background:#f7f4ef; border: 1.5px dashed rgba(26,24,20,0.15); display:flex; align-items:center; justify-content:center; text-align:center;">
+        <div>
+          <span class="product-tag">Coming Soon</span>
+          <p class="product-name" style="font-size:1.25rem; margin-top:0.5rem; color: var(--slate);">More in the barrel.</p>
+          <p style="font-size:0.85rem; color:var(--slate); margin-top:0.5rem; font-weight:300;">
+            We're not telling you what's aging yet.<br>Sign up and be the first to know.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHOLESALE -->
+<section class="wholesale" id="wholesale">
+  <div class="container">
+    <div>
+      <span class="section-label">Wholesale & Trade</span>
+      <h2 class="section-headline">We'd rather work<br>with fewer buyers <em>well</em><br>than many buyers poorly.</h2>
+      <p style="font-size:0.95rem; font-weight:300; color:var(--slate); margin-top:1rem; max-width:40ch; line-height:1.75;">
+        Happy Glen is a small operation and we're intentional about our wholesale relationships.
+        If you're a brewer, restaurateur, specialty retailer, or food producer who cares about where
+        ingredients come from, we'd like to hear from you.
+      </p>
+      <div style="margin-top:2rem;">
+        <a href="mailto:hello@happyglenmaple.com" class="btn btn-primary">Start a Conversation</a>
+      </div>
+    </div>
+    <div>
+      <div class="wholesale-features">
+        <div class="wholesale-feature">
+          <span class="feature-num">→</span>
+          <div class="feature-text">
+            <strong>Brewery Partnerships</strong>
+            <span>Grade A adjunct supply with full documentation for recipe and label use. We're familiar with what brewers need from a traceability and consistency standpoint.</span>
+          </div>
+        </div>
+        <div class="wholesale-feature">
+          <span class="feature-num">→</span>
+          <div class="feature-text">
+            <strong>Bulk Supply (1–40 lb formats)</strong>
+            <span>Amber and Dark grades available in gallon jugs, 5-gallon pails, and 40-lb containers. Seasonal availability; we'll be upfront about what we have.</span>
+          </div>
+        </div>
+        <div class="wholesale-feature">
+          <span class="feature-num">→</span>
+          <div class="feature-text">
+            <strong>Co-Branded &amp; Private Label</strong>
+            <span>For the right partner, we're open to conversation about custom labeling or co-branding on our barrel-aged lines. Early days, but we're thinking about it.</span>
+          </div>
+        </div>
+        <div class="wholesale-feature">
+          <span class="feature-num">→</span>
+          <div class="feature-text">
+            <strong>Specialty Retail</strong>
+            <span>Vermont and regional specialty food accounts only at this stage. We're selective; that's not posturing, it's logistics.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE TEAM -->
+<section id="people" style="padding: 6rem 2.5rem;">
+  <div class="container">
+    <span class="section-label">The Team</span>
+    <h2 class="section-headline">Two humans,<br>one <em>very important dog.</em></h2>
+    <hr class="rule" />
+
+    <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:3rem; margin-top:0;">
+
+      <!-- Phil & Sarah -->
+      <div style="grid-column: span 2;">
+        <span class="product-tag" style="display:block; margin-bottom:0.75rem;">Phil &amp; Sarah · Founders</span>
+        <h3 style="font-family:var(--ff-disp); font-size:2rem; font-weight:400; line-height:1.1; margin-bottom:1.25rem;">
+          Adventurous engineers with a soft spot for Vermont and a low tolerance for the ordinary.
+        </h3>
+        <div style="font-size:0.95rem; font-weight:300; color:var(--slate); line-height:1.85; max-width:65ch;">
+          <p>
+            We've spent over twenty years in pharmaceutical manufacturing and global strategy — building things,
+            fixing things, and solving problems in places we never expected to live. We've been expats,
+            executives, and occasional enthusiastic amateurs at whatever captured our attention that season.
+            (Ask us about natural wine. Or sourdough. Or the Sprinter van.)
+          </p>
+          <p style="margin-top:1rem;">
+            Happy Glen is the thing that finally pulled us toward what makes us happy: the outdoors, great ingredients,
+            land that rewards stewardship, and the intellectual honesty of learning something genuinely new.
+            We thrive on challenge. This is a very good one.
+          </p>
+          <p style="margin-top:1rem;">
+            We're sharing the whole adventure here — the wins, the experiments, and the things we're figuring out
+            as we go. We're engineers, so we document everything. Lucky you.
+          </p>
+        </div>
+      </div>
+
+      <!-- Glen -->
+      <div style="background: var(--ink); padding:2.5rem; border-radius:4px; color:var(--paper);">
+        <span style="font-family:var(--ff-mono); font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--amber-lt); display:block; margin-bottom:0.75rem;">Glen · Chief Enthusiasm Officer</span>
+        <h3 style="font-family:var(--ff-disp); font-size:1.6rem; font-weight:400; font-style:italic; color:var(--paper); line-height:1.15; margin-bottom:1.25rem;">
+          Born in County Longford, Ireland. Currently napping in Vermont.
+        </h3>
+        <div style="font-size:0.88rem; font-weight:300; color:rgba(247,244,239,0.72); line-height:1.8;">
+          <p>
+            Hi, I'm the Glen of Happy Glen Mapleworks. I'm named after my breed — the Glen of Imaal Terrier —
+            and I'm pretty sure I'm nailing it.
+          </p>
+          <p style="margin-top:0.75rem;">
+            I spent my early days in Kinsale running around James Fort beach. Now I call the US home,
+            though my love for green places hasn't changed one bit. I'm a social butterfly
+            (I know, I know — I'm a dog) and I firmly believe everyone should know me.
+          </p>
+          <p style="margin-top:0.75rem;">
+            Hiking, wrestling with other dogs, and long couch naps are my favorite things.
+            I'm also delightfully stubborn — it's part of my charm. I bring enthusiasm, mischief,
+            and happiness to everything we do. Nice to meet you.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<div class="carbon-bar">
+  <div class="container">
+    <p class="carbon-headline">The forest does more than <em>make maple.</em></p>
+    <p class="carbon-body">
+      Our 440 acres — 330 in Braintree and 110 in Hartford–Norwich — are enrolled in Vermont's Current Use
+      program and actively participating in the voluntary carbon credit market. We think responsible land
+      stewardship and exceptional maple production are the same goal, not competing ones.
+      More on our forestry practices coming soon.
+    </p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-logo">Happy <span style="color:var(--forest-lt);">Glen</span> Mapleworks</div>
+  <div class="footer-note">
+    Hartford · Norwich, Vermont<br>
+    <a href="mailto:hello@happyglenmaple.com" style="color:var(--amber); text-decoration:none; font-size:0.78rem;">hello@happyglenmaple.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
