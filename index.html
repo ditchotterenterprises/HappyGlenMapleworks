@@ -41,60 +41,56 @@
   nav ul li a:hover { color: var(--amber); }
 
   /* HERO */
-  .hero { min-height: 88vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 6rem 2.5rem 4rem; max-width: 1280px; margin: 0 auto; gap: 4rem; }
-  .hero-eyebrow { font-family: var(--ff-mono); font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--amber); margin-bottom: 1.25rem; }
-  .hero-headline { font-family: var(--ff-disp); font-size: clamp(3rem, 5vw, 5.5rem); font-weight: 300; line-height: 1.05; color: var(--ink); margin-bottom: 1.75rem; }
-  .hero-headline em { font-style: italic; color: var(--forest-lt); }
-  .hero-sub { font-size: 1.05rem; font-weight: 300; color: var(--slate); line-height: 1.75; max-width: 42ch; margin-bottom: 2.5rem; }
-  .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn { display: inline-block; padding: 0.75rem 1.75rem; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.2s; cursor: pointer; }
-  .btn-primary { background: var(--ink); color: var(--paper); border: 1.5px solid var(--ink); }
-  .btn-primary:hover { background: var(--amber); border-color: var(--amber); }
-  .btn-ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--rule); }
-  .btn-ghost:hover { border-color: var(--ink); }
+  .hero { position: relative; width: 100%; height: 92vh; min-height: 560px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+  .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,20,15,0.25) 0%, rgba(10,20,15,0.65) 100%); }
+  .hero-content { position: relative; z-index: 2; text-align: center; padding: 2rem; max-width: 900px; }
+  .hero-eyebrow { font-family: var(--ff-mono); font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(247,244,239,0.7); margin-bottom: 1.5rem; display: block; }
+  .hero-headline { font-family: var(--ff-disp); font-size: clamp(3.5rem, 7vw, 6.5rem); font-weight: 300; line-height: 1.0; color: var(--paper); margin-bottom: 2.5rem; }
+  .hero-headline em { font-style: italic; color: #a8d5b5; }
+  .hero-tagline { display: flex; align-items: center; justify-content: center; gap: 1.25rem; flex-wrap: wrap; margin-bottom: 3rem; }
+  .hero-tagline-phrase { font-family: var(--ff-disp); font-size: clamp(1rem, 2vw, 1.4rem); font-weight: 300; font-style: italic; color: rgba(247,244,239,0.88); letter-spacing: 0.01em; }
+  .hero-tagline-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--amber); flex-shrink: 0; }
 
-  /* hero visual */
-  .hero-visual { position: relative; height: 520px; background: linear-gradient(145deg, #0d1f18 0%, #1e3d2f 45%, #2e6b4f 100%); border-radius: 4px; overflow: hidden; display: flex; align-items: flex-end; padding: 2.5rem; }
-  .hero-visual::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 30%, rgba(46,107,79,0.3) 0%, transparent 60%); }
-  .hero-visual-label { position: relative; z-index: 1; font-family: var(--ff-disp); font-size: 4rem; font-weight: 300; font-style: italic; color: rgba(247,244,239,0.1); line-height: 1; user-select: none; }
-  .hero-badge { position: absolute; top: 2rem; right: 2rem; z-index: 2; border: 1px solid rgba(247,244,239,0.3); border-radius: 2px; padding: 0.6rem 1rem; font-family: var(--ff-mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(247,244,239,0.6); }
+  /* BUTTONS */
+  .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+  .btn { display: inline-block; padding: 0.75rem 1.75rem; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.2s; cursor: pointer; border: none; }
+  .btn-primary { background: var(--paper); color: var(--ink); border: 1.5px solid var(--paper); }
+  .btn-primary:hover { background: var(--amber); border-color: var(--amber); color: var(--paper); }
+  .btn-ghost { background: transparent; color: var(--paper); border: 1.5px solid rgba(247,244,239,0.5); }
+  .btn-ghost:hover { border-color: var(--paper); background: rgba(247,244,239,0.1); }
+  .btn-dark { background: var(--ink); color: var(--paper); border: 1.5px solid var(--ink); }
+  .btn-dark:hover { background: var(--amber); border-color: var(--amber); }
 
-  /* SECTIONS */
+  /* SHARED SECTION */
   section { padding: 6rem 2.5rem; }
   .container { max-width: 1280px; margin: 0 auto; }
   .section-label { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--amber); margin-bottom: 1rem; display: block; }
+  .section-label.green { color: var(--forest-lt); }
   .section-headline { font-family: var(--ff-disp); font-size: clamp(2rem, 3.5vw, 3.5rem); font-weight: 300; line-height: 1.1; color: var(--ink); margin-bottom: 1.5rem; }
   .section-headline em { font-style: italic; color: var(--amber); }
-  hr.rule { border: none; border-top: 1px solid var(--rule); margin: 0 0 4rem; }
+  hr.rule { border: none; border-top: 1px solid var(--rule); margin: 0 0 3rem; }
 
-  /* ABOUT */
-  .about { background: var(--ink); color: var(--paper); }
-  .about .container { display: grid; grid-template-columns: 1fr 1.4fr; gap: 6rem; align-items: center; }
-  .about .section-headline { color: var(--paper); }
-  .about .section-label { color: var(--amber-lt); }
-  .about-body { font-size: 1.05rem; font-weight: 300; line-height: 1.85; color: rgba(247,244,239,0.75); }
-  .about-body p + p { margin-top: 1.25rem; }
-  .about-body strong { color: var(--paper); font-weight: 500; }
-  .about-pull { font-family: var(--ff-disp); font-size: clamp(1.6rem, 2.5vw, 2.4rem); font-weight: 300; font-style: italic; line-height: 1.3; color: var(--paper); border-left: 2px solid var(--forest-lt); padding-left: 1.75rem; }
+  /* INTRO */
+  .intro { background: var(--paper); }
+  .intro .container { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+  .intro-body { font-size: 1.05rem; font-weight: 300; line-height: 1.85; color: var(--slate); }
+  .intro-body p + p { margin-top: 1.25rem; }
+  .intro-pillars { display: flex; flex-direction: column; gap: 0; border: 1.5px solid var(--rule); }
+  .intro-pillar { padding: 1.5rem 1.75rem; border-bottom: 1px solid var(--rule); display: flex; gap: 1.25rem; align-items: flex-start; }
+  .intro-pillar:last-child { border-bottom: none; }
+  .pillar-icon { font-family: var(--ff-mono); font-size: 0.65rem; color: var(--amber); letter-spacing: 0.1em; padding-top: 0.2rem; flex-shrink: 0; }
+  .pillar-text strong { display: block; font-size: 0.9rem; font-weight: 500; color: var(--ink); margin-bottom: 0.2rem; }
+  .pillar-text span { font-size: 0.85rem; font-weight: 300; color: var(--slate); line-height: 1.6; }
 
   /* PRODUCTS */
   .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--rule); border: 1.5px solid var(--rule); margin-top: 3.5rem; }
   .product-card { background: var(--paper); padding: 2.5rem 2rem; display: flex; flex-direction: column; gap: 1rem; }
-  .product-card:hover { background: #f0ece4; }
+  .product-card:hover { background: var(--warm); }
   .product-tag { font-family: var(--ff-mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); }
   .product-name { font-family: var(--ff-disp); font-size: 1.75rem; font-weight: 400; line-height: 1.1; color: var(--ink); }
   .product-desc { font-size: 0.9rem; font-weight: 300; line-height: 1.7; color: var(--slate); flex: 1; }
   .product-detail { font-family: var(--ff-mono); font-size: 0.68rem; letter-spacing: 0.08em; color: var(--amber); border-top: 1px solid var(--rule); padding-top: 1rem; margin-top: auto; }
-
-  /* WHOLESALE */
-  .wholesale { background: var(--warm); }
-  .wholesale .container { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-  .wholesale-features { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.25rem; }
-  .wholesale-feature { display: flex; gap: 1.25rem; align-items: flex-start; padding-bottom: 1.25rem; border-bottom: 1px solid var(--rule); }
-  .wholesale-feature:last-child { border-bottom: none; }
-  .feature-num { font-family: var(--ff-mono); font-size: 0.68rem; color: var(--amber); letter-spacing: 0.1em; padding-top: 0.15rem; flex-shrink: 0; }
-  .feature-text strong { display: block; font-size: 0.9rem; font-weight: 500; margin-bottom: 0.25rem; }
-  .feature-text span { font-size: 0.88rem; font-weight: 300; color: var(--slate); }
 
   /* CARBON */
   .carbon-bar { background: var(--forest); color: var(--paper); padding: 3.5rem 2.5rem; text-align: center; }
@@ -103,14 +99,66 @@
   .carbon-headline em { font-style: italic; color: #a8d5b5; }
   .carbon-body { font-size: 0.92rem; font-weight: 300; color: rgba(247,244,239,0.65); line-height: 1.8; }
 
-  /* TEAM */
-  .team-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem; margin-top: 0; }
+  /* NARRATIVE */
+  .narrative { padding: 6rem 2.5rem; }
+  .narrative .container { max-width: 720px; }
+  .narrative-headline { font-family: var(--ff-disp); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; line-height: 1.1; color: var(--ink); margin-bottom: 1.5rem; }
+  .narrative-headline em { font-style: italic; color: var(--amber); }
+  .narrative-body { font-size: 1.05rem; font-weight: 300; color: var(--slate); line-height: 1.9; }
+  .narrative-body p + p { margin-top: 1.25rem; }
+  .narrative-body strong { color: var(--ink); font-weight: 500; }
+  .pull-quote { font-family: var(--ff-disp); font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 300; font-style: italic; line-height: 1.4; color: var(--ink); border-left: 2px solid var(--amber); padding-left: 1.75rem; margin: 2.5rem 0; }
+
+  /* PHOTO COLLAGE */
+  .photo-collage { padding: 0 2.5rem 6rem; }
+  .collage-grid-3 { display: grid; grid-template-columns: 1.4fr 1fr 1fr; grid-template-rows: 340px 240px; gap: 8px; }
+  .collage-grid-3 .photo-slot:first-child { grid-row: span 2; }
+  .photo-slot { background: var(--warm); border: 1.5px dashed rgba(26,24,20,0.15); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 1.5rem; position: relative; overflow: hidden; }
+  .photo-slot img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+  .photo-slot-label { font-family: var(--ff-mono); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--slate); margin-bottom: 0.5rem; }
+  .photo-slot-hint { font-size: 0.8rem; font-weight: 300; color: rgba(74,71,64,0.6); font-style: italic; }
+
+  /* PERSON SECTIONS */
+  .person-section { padding: 6rem 2.5rem; }
+  .person-section.alt { background: var(--warm); }
+  .person-section.dark { background: var(--ink); }
+  .person-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .person-grid.flip { direction: rtl; }
+  .person-grid.flip > * { direction: ltr; }
+  .person-photo-block { display: flex; flex-direction: column; gap: 8px; }
+  .person-photo-main { width: 100%; height: 460px; background: rgba(247,244,239,0.08); border: 1.5px dashed rgba(247,244,239,0.2); display: flex; align-items: center; justify-content: center; text-align: center; padding: 1.5rem; position: relative; overflow: hidden; }
+  .person-photo-main.light { background: var(--warm); border-color: rgba(26,24,20,0.15); }
+  .person-photo-main img, .person-photo-sub img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+  .person-photo-sub { width: 100%; height: 200px; background: rgba(247,244,239,0.05); border: 1.5px dashed rgba(247,244,239,0.15); display: flex; align-items: center; justify-content: center; text-align: center; padding: 1rem; position: relative; overflow: hidden; }
+  .person-photo-sub.light { background: #e8e3da; border-color: rgba(26,24,20,0.12); }
+  .photo-placeholder-label { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(74,71,64,0.5); }
+  .photo-placeholder-label.light-text { color: rgba(247,244,239,0.35); }
+  .person-role { font-family: var(--ff-mono); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); margin-bottom: 0.75rem; display: block; }
+  .person-role.green { color: #a8d5b5; }
+  .person-name { font-family: var(--ff-disp); font-size: clamp(2rem, 3vw, 3rem); font-weight: 300; line-height: 1.05; margin-bottom: 1.25rem; }
+  .person-name.light { color: var(--paper); }
+  .person-name em { font-style: italic; }
+  .person-body { font-size: 0.95rem; font-weight: 300; line-height: 1.85; color: var(--slate); }
+  .person-body.light { color: rgba(247,244,239,0.7); }
+  .person-body p + p { margin-top: 1rem; }
+  .person-detail { margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; gap: 1.5rem; }
+  .person-detail.light-rule { border-top-color: rgba(247,244,239,0.12); }
+  .detail-item span { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); display: block; margin-bottom: 0.2rem; }
+  .detail-item p { font-size: 0.85rem; font-weight: 300; color: var(--slate); }
+  .detail-item p.light { color: rgba(247,244,239,0.6); }
+
+  /* GROUP SECTION */
+  .group-section { padding: 6rem 2.5rem; background: var(--forest); text-align: center; }
+  .group-section .section-label { color: #a8d5b5; }
+  .group-headline { font-family: var(--ff-disp); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; color: var(--paper); line-height: 1.1; margin-bottom: 1rem; }
+  .group-headline em { font-style: italic; color: #a8d5b5; }
+  .group-body { font-size: 1rem; font-weight: 300; color: rgba(247,244,239,0.65); line-height: 1.8; max-width: 52ch; margin: 0 auto; }
 
   /* RECIPES */
-  .recipes-placeholder { background: var(--warm); text-align: center; padding: 5rem 2.5rem; }
+  .recipes-placeholder { background: var(--warm); text-align: center; }
   .recipes-placeholder .container { max-width: 600px; }
 
-  /* CONTACT FORM */
+  /* CONTACT */
   .contact-form { display: flex; flex-direction: column; gap: 1rem; max-width: 600px; margin-top: 2rem; }
   .contact-form input, .contact-form select, .contact-form textarea { font-family: var(--ff-body); font-size: 0.9rem; font-weight: 300; padding: 0.85rem 1rem; background: var(--paper); border: 1px solid var(--rule); border-radius: 2px; color: var(--ink); width: 100%; outline: none; transition: border-color 0.2s; }
   .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { border-color: var(--amber); }
@@ -123,14 +171,16 @@
 
   /* RESPONSIVE */
   @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; padding-top: 3rem; }
-    .hero-visual { height: 320px; }
-    .about .container { grid-template-columns: 1fr; gap: 3rem; }
+    .intro .container { grid-template-columns: 1fr; gap: 3rem; }
     .products-grid { grid-template-columns: 1fr; }
-    .wholesale .container { grid-template-columns: 1fr; gap: 3rem; }
-    .team-grid { grid-template-columns: 1fr; }
+    .person-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .person-grid.flip { direction: ltr; }
+    .collage-grid-3 { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    .collage-grid-3 .photo-slot:first-child { grid-row: span 1; }
+    nav ul { gap: 1rem; }
     footer { flex-direction: column; align-items: flex-start; }
     .footer-note { text-align: left; }
+    .hero-tagline { gap: 0.75rem; }
   }
 </style>
 </head>
@@ -149,88 +199,109 @@
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-text">
-    <p class="hero-eyebrow">Braintree, Vermont · Est. 2024</p>
+  <img class="hero-img" src="hero.jpg" alt="Happy Glen Mapleworks — Braintree, Vermont" />
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Braintree, Vermont · Est. 2024</span>
     <h1 class="hero-headline">Welcome to <em>the Glen.</em></h1>
-    <p class="hero-sub">
-      Barrel-aged and hand-infused small-batch Vermont maple syrup
-    </p>
+    <div class="hero-tagline">
+      <span class="hero-tagline-phrase">Life worth living</span>
+      <span class="hero-tagline-dot"></span>
+      <span class="hero-tagline-phrase">A place worth choosing</span>
+      <span class="hero-tagline-dot"></span>
+      <span class="hero-tagline-phrase">Maple worth sharing</span>
+    </div>
     <div class="btn-group">
       <a href="#products" class="btn btn-primary">Shop Maple Syrup</a>
       <a href="#contact" class="btn btn-ghost">Wholesale Inquiry</a>
     </div>
   </div>
-  <div class="hero-visual">
-    <div class="hero-badge">Hartford · Braintree, VT</div>
-    <div class="hero-visual-label">Mapleworks</div>
-  </div>
 </div>
 
-
+<!-- INTRO -->
+<section class="intro">
+  <div class="container">
+    <div>
+      <span class="section-label">Happy Glen Mapleworks</span>
+      <h2 class="section-headline">A different way of<br><em>thinking about maple.</em></h2>
+      <div class="intro-body">
+        <p>Happy Glen starts with 440 acres of Vermont forest and a belief that life is multi-dimensional. Career executives and casual outdoorsmen. Global citizens and homebodies. High standards and sweaty messes.</p>
+        <p>Happy Glen is where conflicting parts come together as new connections. We start with Vermont maple and create products that reflect the way we live: thoughtfully made, connected to our experiences, and meant to be shared.</p>
+        <div style="margin-top:2rem;">
+          <a href="#story" class="btn btn-dark">Our Story</a>
+        </div>
+      </div>
+    </div>
+    <div class="intro-pillars">
+      <div class="intro-pillar">
+        <span class="pillar-icon">01</span>
+        <div class="pillar-text">
+          <strong>What We Make</strong>
+          <span>Simply, we make maple products we actually want to cook with, drink, or put on our own table. Each product must pass our internal standard — are we proud of the quality such that we can share the result with our professional colleagues?</span>
+        </div>
+      </div>
+      <div class="intro-pillar">
+        <span class="pillar-icon">02</span>
+        <div class="pillar-text">
+          <strong>How We Make It</strong>
+          <span>At work and at Happy Glen we believe that simplicity breeds quality. We prioritize ingredients that are pure and straightforward, we execute craftsmanship without fuss, and prioritize authenticity over scale. The goal is not to make the most. It is to make something worth making.</span>
+        </div>
+      </div>
+      <div class="intro-pillar" style="background:var(--forest-mist); border-left: 3px solid var(--forest-lt);">
+        <span class="pillar-icon" style="color:var(--forest);">03</span>
+        <div class="pillar-text">
+          <strong style="color:var(--forest);">Who We Make It With</strong>
+          <span>Happy Glen is about connection. We create products and stories to share with family, friends, colleagues, and the people we meet along the way — some in Vermont, some in Indiana, some scattered around the world. The people who become part of Happy Glen matter as much as the products themselves.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- PRODUCTS -->
-<section id="products">
+<section id="products" style="background:var(--warm);">
   <div class="container">
     <span class="section-label">The Syrups</span>
-    <h2 class="section-headline">Every bottle is<br><em>intentional.</em></h2>
+    <h2 class="section-headline">Every bottle has<br>a <em>story behind it.</em></h2>
     <hr class="rule" />
     <div class="products-grid">
-
       <div class="product-card">
         <span class="product-tag">Barrel-Aged</span>
         <h3 class="product-name">Bourbon Barrel-Aged</h3>
-        <p class="product-desc">
-          Vermont maple syrup aged in bourbon barrels. The oak and spirit notes deepen the maple character, making the result richer and more complex than syrup straight from the evaporator. Exceptional on its own, and a serious ingredient in cocktails, glazes, and anything that benefits from patience.
-        </p>
+        <p class="product-desc">Aged in bourbon-seasoned American oak barrels, this syrup develops layers of vanilla, oak, and bourbon warmth while maintaining the rich maple flavor that makes it the foundation. A natural fit for cocktails, desserts, cheese boards, and anywhere you want a little more complexity.</p>
         <div class="product-detail">Format: TBD · Price: TBD</div>
       </div>
-
       <div class="product-card">
         <span class="product-tag">Infused Series</span>
-        <h3 class="product-name">Cinnamon Infused</h3>
-        <p class="product-desc">
-          Pure Vermont maple with cinnamon, enriching the flavor in a warm and familiar way that is more interesting than either ingredient alone. Works beautifully on breakfast, in baking, and anywhere you want something that tastes like it took effort.
-        </p>
+        <h3 class="product-name">Cinnamon</h3>
+        <p class="product-desc">Cinnamon and maple belong together. This version adds warmth and spice while keeping the natural sweetness and character of the maple at the center. A versatile addition to breakfast, coffee, ice cream, and where you want to treat guests.</p>
         <div class="product-detail">Format: TBD · Price: TBD</div>
       </div>
-
       <div class="product-card">
         <span class="product-tag">Infused Series</span>
-        <h3 class="product-name">Vanilla Infused</h3>
-        <p class="product-desc">
-          Vermont maple meets vanilla resulting in a syrup that's rounder and more aromatic than the base alone. Excellent over ice cream, in coffee, or as a finishing drizzle on anything you want to feel a little more special.
-        </p>
+        <h3 class="product-name">Vanilla</h3>
+        <p class="product-desc">Vanilla brings out the natural depth of maple, adding a smooth aromatic quality without overpowering the ingredient that started it all. Great for baking, desserts, and recipes where a little extra richness goes a long way.</p>
         <div class="product-detail">Format: TBD · Price: TBD</div>
       </div>
-
       <div class="product-card">
         <span class="product-tag">Infused Series</span>
-        <h3 class="product-name">Pepper Infused</h3>
-        <p class="product-desc">
-          The unexpected one. Heat and sweetness in the same pour, providing a syrup for people who cook seriously. Use it on cheese boards, on vegetables, or anywhere you want a combination that makes people surprised what maple can do.
-        </p>
+        <h3 class="product-name">Pepper</h3>
+        <p class="product-desc">This savory take on maple balances natural sweetness with the zip of pepper, creating an ingredient that works well for cooking. Use it with roasted vegetables, cheese, marinades, sauces, eggs, or anywhere you want sweet and savory together.</p>
         <div class="product-detail">Format: TBD · Price: TBD</div>
       </div>
-
-      <div class="product-card" style="background:var(--warm);">
+      <div class="product-card">
         <span class="product-tag">Bulk / Wholesale</span>
         <h3 class="product-name">Bulk &amp; Wholesale</h3>
-        <p class="product-desc">
-          We supply craft brewers, restaurants, and specialty producers with Vermont maple in bulk — 100mL, pints, gallons and larger by arrangement. Get in touch and we'll put together a quote.
-        </p>
-        <div class="product-detail">
-          <a href="#contact" style="color:var(--amber); text-decoration:none;">Wholesale Inquiry →</a>
-        </div>
+        <p class="product-desc">We supply craft brewers, restaurants, and specialty producers with Vermont maple in bulk — quarts, gallons, and larger by arrangement. Get in touch and we'll put together a quote.</p>
+        <div class="product-detail"><a href="#contact" style="color:var(--amber); text-decoration:none;">Wholesale Inquiry →</a></div>
       </div>
-
-      <div class="product-card" style="background:var(--paper); border: 1.5px dashed rgba(26,24,20,0.15); display:flex; align-items:center; justify-content:center; text-align:center;">
+      <div class="product-card" style="border: 1.5px dashed rgba(26,24,20,0.15); display:flex; align-items:center; justify-content:center; text-align:center;">
         <div>
           <span class="product-tag">Coming Soon</span>
           <p class="product-name" style="font-size:1.25rem; margin-top:0.5rem; color:var(--slate);">More in the barrel.</p>
           <p style="font-size:0.85rem; color:var(--slate); margin-top:0.5rem; font-weight:300;">We're not telling you what's aging yet.</p>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -239,75 +310,199 @@
 <div class="carbon-bar">
   <div class="container">
     <p class="carbon-headline">The forest does more than <em>make maple.</em></p>
-    <p class="carbon-body">
-      We're sustainably managing 440 acres and preserving the integrity of the forest through carbon capture while working to evolve operations into a net negative endeavor. Across 330 acres in Braintree and 110 acres in Hartford–Norwich, we're enrolled in Vermont's Current Use program and actively participating in the voluntary carbon credit market. This place was here long before us. We intend to leave it better.
-    </p>
+    <p class="carbon-body">We're sustainably managing 400+ acres and preserving the integrity of the forest through carbon capture while working to evolve operations into a net negative endeavor. This land was here long before us. We are just the stewards.</p>
   </div>
 </div>
 
-<!-- TEAM -->
-<section id="team" style="padding: 6rem 2.5rem;">
+<!-- OUR STORY — NARRATIVE -->
+<section class="narrative" id="story">
   <div class="container">
-    <span class="section-label">The Team</span>
-    <h2 class="section-headline">Two humans,<br>one <em>very important dog.</em></h2>
+    <span class="section-label">Why Happy Glen Exists</span>
     <hr class="rule" />
-    <div class="team-grid">
-
-      <div style="grid-column: span 2;">
-        <span class="product-tag" style="display:block; margin-bottom:0.75rem;">Phil &amp; Sarah · Founders</span>
-        <h3 style="font-family:var(--ff-disp); font-size:2rem; font-weight:400; line-height:1.1; margin-bottom:1.25rem;">
-          Pharma executives with maple-farming alter egos
-        </h3>
-        <div style="font-size:0.95rem; font-weight:300; color:var(--slate); line-height:1.85; max-width:65ch;">
-          <p>
-            The story starts at Rose-Hulman, where we met as Chemical Engineering students — small-town Indiana meets Navy brat. We've spent nearly 25 years in the pharmaceutical industry launching products, solving complex problems, and leading global teams. Even though the work is primarily done in the manufacturing plant, our best thinking always comes in the forest.
-          </p>
-          <p style="margin-top:1rem;">
-            Along the way, we've had more adventures than we can count ... living as expats in China and Ireland, expedition mountain climbing, 75+ countries visited, and a lot of Macklemore concerts. We enjoy experiencing what makes people and places special, especially on foot and in the kitchen.  
-          </p>
-          <p style="margin-top:1rem;">
-            Now we're channeling our love for Vermont, our passion for hiking, Phil's love for cooking (mine for eating), and our skills as engineers into a new adventure: maple syrup! Our hope for Happy Glen is that we can connect our global community with a place we love. Welcome to Happy Glen.
-          </p>
-        </div>
-      </div>
-
-      <div style="background: var(--ink); padding:2.5rem; border-radius:4px; color:var(--paper);">
-        <span style="font-family:var(--ff-mono); font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--amber-lt); display:block; margin-bottom:0.75rem;">Glen · Chief Enthusiasm Officer</span>
-        <h3 style="font-family:var(--ff-disp); font-size:1.6rem; font-weight:400; font-style:italic; color:var(--paper); line-height:1.15; margin-bottom:1.25rem;">
-          Born in County Longford, Ireland. Currently napping on the couch.
-        </h3>
-        <div style="font-size:0.88rem; font-weight:300; color:rgba(247,244,239,0.72); line-height:1.8;">
-          <p>Hi, I'm the Glen of Happy Glen Mapleworks. I'm named after my breed (the Glen of Imaal Terrier) and no dog is as "Glen" as me.</p>
-          <p style="margin-top:0.75rem;">I'm Irish and spent my early days in Kinsale running around Dock Beach. Now I call the US and England home. I firmly believe everyone should know me which is why I frequent cafes, bars, and anywhere else where people may not have had the privilege of meeting me.</p>
-          <p style="margin-top:0.75rem;">Hiking, wrestling with other big dogs, snarfing "food" off sidewalks, and long couch naps are my favorite things. I'm also delightfully stubborn — it's part of my charm. I bring enthusiastic disinterest and happiness to everything we do. Nice to meet you.</p>
-        </div>
-      </div>
-
+    <h2 class="narrative-headline">Happy Glen is not<br>an escape. <em>It is a connection point.</em></h2>
+    <div class="narrative-body">
+      <p>Happy Glen started with a simple question: how do we keep making space for the aspects of our lives that make us who we are?</p>
+      <p>Our professional lives have always challenged us to learn, solve problems, and create impact. Happy Glen allows us to apply that same mindset outside of the office as our unpolished selves.</p>
+      <p>The forest is at the center of Happy Glen. It is our favorite spot to think clearly and have the conversations that matter most. Maple is a natural starting point because it comes directly from our happy place and requires us to put our capabilities to practical use.</p>
+      <p>Happy Glen is intentionally small. We are not trying to build the biggest maple company. The bigger idea is creating something worth working on and sharing with the people who are part of our lives.</p>
     </div>
   </div>
 </section>
 
-<!-- RECIPES PLACEHOLDER -->
+<!-- PHIL & SARAH COLLAGE -->
+<div class="photo-collage">
+  <div class="container">
+    <div class="collage-grid-3">
+      <div class="photo-slot">
+        <img src="photo-phil-glen-hiking.jpg" alt="Phil hiking with Glen in the mountains" />
+      </div>
+      <div class="photo-slot">
+        <img src="photo-expedition.jpg" alt="Expedition mountaineering" />
+      </div>
+      <div class="photo-slot">
+        <img src="photo-sarah-acadia.jpg" alt="Sarah climbing in Acadia" />
+      </div>
+      <div class="photo-slot">
+        <img src="photo-phil-sandwich.jpg" alt="Phil" />
+      </div>
+      <div class="photo-slot">
+        <img src="photo-pep-rally.jpg" alt="Phil and Sarah at Rose-Hulman pep rally" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHIL & SARAH BIO -->
+<section class="person-section">
+  <div class="container">
+    <div class="person-grid">
+      <div class="person-bio">
+        <span class="person-role">The Founders</span>
+        <h2 class="person-name">Phil <em>&amp;</em> Sarah</h2>
+        <div class="person-body">
+          <p>We both grew up connected to Indiana and met while studying Chemical Engineering at Rose-Hulman then Strategic Management at IU. (Despite our degrees, we're Purdue fans. Boiler up!)</p>
+          <p>Our careers took us around the world, where we had the opportunity to work with talented people, solve difficult problems, and lead teams through complex challenges. Those experiences continued to shape how we approach everything: understand the problem and system, keep learning, and never stop trying to improve. We're engineers and problem solvers through-and-through.</p>
+          <p>Outside of work, we can be found in hiking boots, running shoes, or covered in flour. We spend our time exploring new places, cooking, being outside, and carrying the dog home from the coffee shop.</p>
+          <p>We are who we are and Happy Glen blends the aspects of our lives that were feeling in tension. Our professional lives were taking over. Now they enable a project that allows us to share back syrup, absurd stories of trial and mainly error, and a connection with the place we're choosing to call home.</p>
+        </div>
+      </div>
+      <div class="person-photo-block">
+        <div class="person-photo-main light">
+          <img src="photo-phil-glen-woodstock.jpg" alt="Phil and Glen in Woodstock, VT" />
+        </div>
+        <div class="person-photo-sub light">
+          <img src="photo-phil-chicken.jpg" alt="Phil" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE LAND -->
+<section class="narrative" style="background: var(--warm);">
+  <div class="container">
+    <span class="section-label">The Land</span>
+    <hr class="rule" />
+    <div class="narrative-body">
+      <p>Our original property (the farm) is 330 acres stretching approximately 1.5 miles end-to-end, and 700 feet of elevation change from the river to mountain peak. Happy Glen is essentially an entire side of a mountain with more than 3,000 tapped maple trees, 2 sugar stands, and countless miles of future hiking trails to be created.</p>
+      <p>The second property adds another perspective on the Vermont landscape. The 110 acres includes meadow, wetlands, and forest, including two resident beavers that have made their home there. The property borders the Appalachian Trail, connecting Happy Glen to a much larger landscape of forests, mountains, and people who spend their lives exploring them. This will be our future base of operations.</p>
+      <p>Together, these places represent what drew us to Vermont in the first place: a landscape that is beautiful, complex, and worth caring for.</p>
+    </div>
+    <div style="margin-top:3rem; width:100%; height:420px; overflow:hidden; border-radius:2px;">
+      <img src="photo-prayer-flags.jpg" alt="Prayer flags on the Happy Glen property" style="width:100%; height:100%; object-fit:cover; object-position:center;" />
+    </div>
+  </div>
+</section>
+
+<!-- GLEN BIO -->
+<section class="person-section dark" id="glen">
+  <div class="container">
+    <div class="person-grid flip">
+      <div class="person-bio">
+        <span class="person-role green">Chief Enthusiasm Officer</span>
+        <h2 class="person-name light">Glen.</h2>
+        <div class="person-body light">
+          <p>Hi, I'm Glen, named after my breed and now namesake of Happy Glen. This seems a bit confusing actually but it makes sense … I am clearly the most important member of this and every operation.</p>
+          <p>I enjoy long walks in the forest (honestly, its the only place I actually walk), meeting new people, and making sure everyone knows I have arrived. I am admittedly stubborn and frequently difficult but adorably charming when I want to be.</p>
+          <p>You could call me ... complicated.</p>
+          <p>I am extremely confident for a dog who can't always figure out life. I will happily introduce myself to every person in the room, but I'll forget what I'm doing as soon as I come to an intersection. I am an excellent athlete, despite evidence and leg-length that suggests otherwise.</p>
+          <p>Happy Glen is about enjoying what makes us who we are. Nice to meet you!</p>
+        </div>
+        <div class="person-detail light-rule">
+          <div class="detail-item">
+            <span>Breed</span>
+            <p class="light">Glen of Imaal Terrier</p>
+          </div>
+          <div class="detail-item">
+            <span>Born</span>
+            <p class="light">County Longford, Ireland</p>
+          </div>
+          <div class="detail-item">
+            <span>Early Days</span>
+            <p class="light">Kinsale, Co. Cork</p>
+          </div>
+          <div class="detail-item">
+            <span>Current Posts</span>
+            <p class="light">The couch</p>
+          </div>
+        </div>
+      </div>
+      <div class="person-photo-block">
+        <div class="person-photo-main">
+          <img src="photo-glen-car.jpg" alt="Glen" />
+        </div>
+        <div class="person-photo-sub">
+          <img src="photo-glen-wet.jpg" alt="Glen by the water" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRIAR & BROOKE BIO -->
+<section class="person-section alt" id="briar-brooke">
+  <div class="container">
+    <div class="person-grid">
+      <div class="person-photo-block">
+        <div class="person-photo-main light" style="border:none;">
+          <img src="photo-group-santiago.jpg" alt="Briar, Brooke, Phil and Sarah in Santiago de Compostela" />
+        </div>
+      </div>
+      <div class="person-bio">
+        <span class="person-role">Friends Turned Family · Business Managers</span>
+        <h2 class="person-name">Briar <em>&amp;</em> Brooke</h2>
+        <div class="person-body">
+          <p>[PLACEHOLDER — Briar and Brooke's introduction. Who they are, where they're from, and how they came into Phil and Sarah's lives.]</p>
+          <p>[PLACEHOLDER — What they bring to Happy Glen. Their role as Business Managers and why their involvement makes the operation better.]</p>
+          <p>[PLACEHOLDER — Something personal that captures who they are.]</p>
+        </div>
+        <div class="person-detail">
+          <div class="detail-item">
+            <span>Role</span>
+            <p>Business Managers</p>
+          </div>
+          <div class="detail-item">
+            <span>Based In</span>
+            <p>[Placeholder — Location]</p>
+          </div>
+          <div class="detail-item">
+            <span>Part of the Glen since</span>
+            <p>[Placeholder — Year or story]</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE WHOLE CREW -->
+<section class="group-section" id="the-team">
+  <div class="container">
+    <span class="section-label green">The Whole Crew</span>
+    <h2 class="group-headline">Better together<br><em>than any of us alone.</em></h2>
+    <p class="group-body">Happy Glen was meant to bring together the different parts of our lives. That includes collaborating because interesting people, ideas, and places create better things. We look for people who care about what they make and share our approach: thoughtful, genuine, and focused on quality over scale.</p>
+    <p class="group-body" style="margin-top:1rem;">Happy Glen will always remain true to why it started. We will not chase growth that makes the work less enjoyable, compromises the connection to the forest, or takes us away from the people who helped create it.</p>
+    <p class="group-body" style="margin-top:1rem;">The goal is simple: make things worth making, with people worth working with.</p>
+  </div>
+</section>
+
+<!-- RECIPES -->
 <section class="recipes-placeholder" id="recipes">
   <div class="container">
     <span class="section-label">Recipes</span>
     <h2 class="section-headline" style="color:var(--ink);">Coming <em>soon.</em></h2>
-    <p style="font-size:1rem; font-weight:300; color:var(--slate); line-height:1.8; margin-top:1rem;">
-      We're putting this page together. In the meantime, we're cooking — and we'll share what's worth sharing when it's ready.
-    </p>
+    <p style="font-size:1rem; font-weight:300; color:var(--slate); line-height:1.8; margin-top:1rem;">We're putting this page together. In the meantime, we're cooking — and we'll share what's worth sharing when it's ready.</p>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" style="padding: 6rem 2.5rem;">
+<section id="contact">
   <div class="container">
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start;">
       <div>
         <span class="section-label">Contact</span>
         <h2 class="section-headline">Say <em>hello.</em></h2>
-        <p style="font-size:1rem; font-weight:300; color:var(--slate); line-height:1.8; margin-bottom:2rem;">
-          Whether you want to talk maple, ask about wholesale, or just tell Glen he's a good boy — we'd love to hear from you.
-        </p>
+        <p style="font-size:1rem; font-weight:300; color:var(--slate); line-height:1.8; margin-bottom:2rem;">Whether you want to talk maple, ask about wholesale, or just tell Glen he's a good boy — we'd love to hear from you.</p>
         <div style="font-size:0.88rem; font-weight:300; color:var(--slate); line-height:2;">
           <p><strong style="font-weight:500; color:var(--ink);">Happy Glen Mapleworks</strong></p>
           <p>Braintree, Vermont</p>
@@ -326,7 +521,7 @@
             <option>Something else</option>
           </select>
           <textarea placeholder="Message"></textarea>
-          <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Send It</button>
+          <button type="submit" class="btn btn-dark" style="align-self:flex-start;">Send It</button>
         </form>
         <p id="form-msg" style="display:none; margin-top:1rem; font-size:0.88rem; color:var(--forest); font-weight:400;">Thanks — we'll be in touch soon.</p>
       </div>
