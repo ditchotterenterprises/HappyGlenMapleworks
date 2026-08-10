@@ -126,10 +126,10 @@
   .person-grid.flip { direction: rtl; }
   .person-grid.flip > * { direction: ltr; }
   .person-photo-block { display: flex; flex-direction: column; gap: 8px; }
-  .person-photo-main { width: 100%; height: 380px; background: rgba(247,244,239,0.08); border: 1.5px dashed rgba(247,244,239,0.2); display: flex; align-items: center; justify-content: center; text-align: center; padding: 1.5rem; position: relative; overflow: hidden; }
+  .person-photo-main { width: 100%; height: 320px; background: rgba(247,244,239,0.08); border: 1.5px dashed rgba(247,244,239,0.2); display: flex; align-items: center; justify-content: center; text-align: center; padding: 1.5rem; position: relative; overflow: hidden; }
   .person-photo-main.light { background: var(--warm); border-color: rgba(26,24,20,0.15); }
   .person-photo-main img, .person-photo-sub img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
-  .person-photo-sub { width: 100%; height: 160px; background: rgba(247,244,239,0.05); border: 1.5px dashed rgba(247,244,239,0.15); display: flex; align-items: center; justify-content: center; text-align: center; padding: 1rem; position: relative; overflow: hidden; }
+  .person-photo-sub { width: 100%; height: 200px; background: rgba(247,244,239,0.05); border: 1.5px dashed rgba(247,244,239,0.15); display: flex; align-items: center; justify-content: center; text-align: center; padding: 1rem; position: relative; overflow: hidden; }
   .person-photo-sub.light { background: #e8e3da; border-color: rgba(26,24,20,0.12); }
   .photo-placeholder-label { font-family: var(--ff-mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(74,71,64,0.5); }
   .photo-placeholder-label.light-text { color: rgba(247,244,239,0.35); }
@@ -368,10 +368,10 @@
       </div>
       <div class="person-photo-block">
         <div class="person-photo-main light">
-          <img src="photo-phil-sarah-portrait.jpg" alt="Phil and Sarah" style="object-fit: cover; object-position: center 25%;" />
+          <img src="photo-phil-sarah-portrait.jpg" alt="Phil and Sarah" style="object-fit: contain; object-position: center center;" />
         </div>
         <div class="person-photo-sub light">
-          <img src="photo-phil-glen-woodstock.jpg" alt="Phil and Glen in Woodstock VT" style="object-fit: cover; object-position: center 20%;" />
+          <img src="photo-phil-glen-woodstock.jpg" alt="Phil and Glen in Woodstock VT" style="object-fit: contain; object-position: center center;" />
         </div>
       </div>
     </div>
@@ -429,10 +429,10 @@
       </div>
       <div class="person-photo-block">
         <div class="person-photo-main">
-          <img src="photo-glen-car.jpg" alt="Glen" style="object-fit: cover; object-position: center 30%;" />
+          <img src="photo-glen-car.jpg" alt="Glen" style="object-fit: contain; object-position: center center;" />
         </div>
         <div class="person-photo-sub">
-          <img src="photo-glen-wet.jpg" alt="Glen by the water" style="object-fit: cover; object-position: center 25%;" />
+          <img src="photo-glen-wet.jpg" alt="Glen by the water" style="object-fit: contain; object-position: center center;" />
         </div>
       </div>
     </div>
@@ -445,7 +445,7 @@
     <div class="person-grid">
       <div class="person-photo-block">
         <div class="person-photo-main light" style="border:none;">
-          <img src="photo-group-santiago.jpg" alt="Briar, Brooke, Phil and Sarah in Santiago de Compostela" style="object-position: center 30%;" />
+          <img src="photo-group-santiago.jpg" alt="Briar, Brooke, Phil and Sarah in Santiago de Compostela" style="object-fit: contain; object-position: center center;" />
         </div>
       </div>
       <div class="person-bio">
