@@ -126,7 +126,8 @@
   .person-grid.flip { direction: rtl; }
   .person-grid.flip > * { direction: ltr; }
   .person-photo-block { display: flex; flex-direction: column; gap: 8px; }
-  .person-photo-main { width: 100%; height: 320px; background: rgba(247,244,239,0.08); border: 1.5px dashed rgba(247,244,239,0.2); display: flex; align-items: center; justify-content: center; text-align: center; padding: 1.5rem; position: relative; overflow: hidden; }
+  .person-photo-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .person-photo-main { width: 100%; height: 480px; background: rgba(247,244,239,0.08); border: 1.5px dashed rgba(247,244,239,0.2); display: flex; align-items: center; justify-content: center; text-align: center; padding: 1.5rem; position: relative; overflow: hidden; }
   .person-photo-main.light { background: var(--warm); border-color: rgba(26,24,20,0.15); }
   .person-photo-main img, .person-photo-sub img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
   .person-photo-sub { width: 100%; height: 200px; background: rgba(247,244,239,0.05); border: 1.5px dashed rgba(247,244,239,0.15); display: flex; align-items: center; justify-content: center; text-align: center; padding: 1rem; position: relative; overflow: hidden; }
@@ -175,6 +176,7 @@
     .products-grid { grid-template-columns: 1fr; }
     .person-grid { grid-template-columns: 1fr; gap: 3rem; }
     .person-grid.flip { direction: ltr; }
+    .person-photo-pair { grid-template-columns: 1fr; }
     .collage-grid-3 { grid-template-columns: repeat(3, 1fr); grid-template-rows: 280px; }
     .collage-grid-3 .photo-slot:first-child { grid-row: span 1; }
     nav ul { gap: 1rem; }
@@ -337,7 +339,7 @@
         <img src="photo-phil-glen-hiking.jpg" alt="Phil hiking with Glen" style="object-fit: cover; object-position: 60% 15%;" />
       </div>
       <div class="photo-slot">
-        <img src="photo-expedition.jpg" alt="Expedition mountaineering" style="object-fit: cover; object-position: center 25%;" />
+        <img src="photo-phil-glen-woodstock.jpg" alt="Phil and Glen in Woodstock VT" style="object-fit: cover; object-position: center 20%;" />
       </div>
       <div class="photo-slot">
         <img src="photo-sarah-acadia.jpg" alt="Sarah climbing in Acadia" style="object-fit: cover; object-position: center 35%;" />
@@ -366,12 +368,12 @@
           <p>We are who we are and Happy Glen blends the aspects of our lives that were feeling in tension. Our professional lives were taking over. Now they enable a project that allows us to share back syrup, absurd stories of trial and mainly error, and a connection with the place we're choosing to call home.</p>
         </div>
       </div>
-      <div class="person-photo-block">
+      <div class="person-photo-pair">
         <div class="person-photo-main light">
-          <img src="photo-phil-sarah-portrait.jpg" alt="Phil and Sarah" style="object-fit: contain; object-position: center center;" />
+          <img src="photo-phil-sarah-portrait.jpg" alt="Phil and Sarah" style="object-fit: cover; object-position: center 20%;" />
         </div>
-        <div class="person-photo-sub light">
-          <img src="photo-phil-glen-woodstock.jpg" alt="Phil and Glen in Woodstock VT" style="object-fit: contain; object-position: center center;" />
+        <div class="person-photo-main light">
+          <img src="photo-expedition.jpg" alt="Phil and Sarah on the mountain ridgeline" style="object-fit: cover; object-position: center 25%;" />
         </div>
       </div>
     </div>
@@ -427,12 +429,12 @@
           </div>
         </div>
       </div>
-      <div class="person-photo-block">
+      <div class="person-photo-pair">
         <div class="person-photo-main">
-          <img src="photo-glen-car.jpg" alt="Glen" style="object-fit: contain; object-position: center center;" />
+          <img src="photo-glen-car.jpg" alt="Glen" style="object-fit: cover; object-position: center 25%;" />
         </div>
-        <div class="person-photo-sub">
-          <img src="photo-glen-wet.jpg" alt="Glen by the water" style="object-fit: contain; object-position: center center;" />
+        <div class="person-photo-main">
+          <img src="photo-glen-wet.jpg" alt="Glen by the water" style="object-fit: cover; object-position: center 20%;" />
         </div>
       </div>
     </div>
@@ -445,7 +447,7 @@
     <div class="person-grid">
       <div class="person-photo-block">
         <div class="person-photo-main light" style="border:none;">
-          <img src="photo-group-santiago.jpg" alt="Briar, Brooke, Phil and Sarah in Santiago de Compostela" style="object-fit: contain; object-position: center center;" />
+          <img src="photo-group-santiago.jpg" alt="Briar, Brooke, Phil and Sarah in Santiago de Compostela" style="object-fit: cover; object-position: center 35%;" />
         </div>
       </div>
       <div class="person-bio">
